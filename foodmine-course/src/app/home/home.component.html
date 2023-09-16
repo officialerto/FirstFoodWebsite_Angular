@@ -3,8 +3,8 @@
 
 <ul>
     
-    <li *ngFor="let food of foods">
-        <a>
+    <li *ngFor="let food of foods"> 
+        <a routerLink="/food/{{food.id}}">
             <img src="{{food.imageUrl}}" alt="">
             <div class="content">
                 <div class="name">
