@@ -1,4 +1,8 @@
-<div class="container">
+<app-not-found [visible]="!food" notFoundMessage="Product Not Found!" resetLinkText="Back to Homepage">
+
+</app-not-found>
+
+<div class="container" *ngIf="food">
     <img [src]="food.imageUrl" [alt]="food.name" />
     
     <div class="details">
@@ -18,7 +22,8 @@
         </div>
     
         <div class="tags">
-            <app-tags [foodPageTags]="food.tags"></app-tags>
+            <!-- <app-tags [foodPageTags]="food.tags"></app-tags> -->
+            <app-tags [foodPageTags]="food.tags" justifyContent="start"></app-tags>
         </div>
     
         <div class="cook-time">
@@ -31,7 +36,7 @@
             <span>{{food.price|currency}}</span>
         </div>
     
-        <button>Add To Cart</button>
+        <button (click)="addToCart()">Add To Cart</button>
     </div>
     
     </div>

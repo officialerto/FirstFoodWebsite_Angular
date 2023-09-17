@@ -1,5 +1,9 @@
 <app-search></app-search>
 <app-tags></app-tags>
+<app-not-found [visible]="!foods || foods.length<=0"
+resetLinkText="Reset Search">
+    
+</app-not-found>
 
 <ul>
     
@@ -23,7 +27,8 @@
                             {{food.cookTime}}
                         </div>
                         <div class="price">
-                            <span>${{food.price}}</span>
+                            <span> {{food.price|currency:'€'}}</span>
+                            
                         </div>
                     </div>
                 </div>
